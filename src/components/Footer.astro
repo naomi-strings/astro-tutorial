@@ -1,0 +1,15 @@
+---
+const platform = "github";
+const username = "naomi-strings";
+import Social from './Social.astro';
+
+---
+
+<footer>
+  <p>Learn more about my projects on <a href={`https://www.${platform}.com/${username}`}>{platform}</a>!</p>
+  <p><a href="https://www.instagram.com/naomispot">naomi on instagram</a></p>
+
+  <Social platform="bluesky" username="fridaygoodybag" />
+  <Social platform="github" username="naomi-strings" />
+  <Social platform="youtube" username="FridayGoodyBag" />
+</footer>

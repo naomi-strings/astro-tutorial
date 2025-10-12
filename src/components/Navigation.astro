@@ -1,0 +1,261 @@
+---
+
+---
+            <nav class="navbar">
+                <div class="navlogo">
+                <img src="img/fgb-logo.svg">
+            </div>
+            <ul class="navlist">
+                <li class="navlist-item"><a href="/blog/">blog</a></li>
+                <li class="navlist-item"><a href="/about/">about</a></li>
+                <!--<li class="navlist-item"><a href="">join list</a></li>-->
+            </ul>
+            <form id="subscribe" class="subscribe">
+                <input type="email" placeholder="you@email.com">
+                <button type="submit" aria-label="Subscribe">
+                    <img src="img/play.svg" alt="">
+                </button>
+            </form>
+
+            <div class="nav-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+</nav>
+<style>
+nav.navbar {
+    background-color: var(--brand-palest);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.navlogo img {
+    height: 3rem;
+    padding-left: 1rem;
+}
+
+.navlogo img:hover {
+    opacity: 0.8;
+}
+
+ul.navlist {
+  list-style-type: none;
+  padding-left: 0;
+  width: 100%;
+  order: 3;
+  flex-direction: column;
+  background-color: var(--brand-dark);
+  padding-top: 1rem;
+}
+
+li.navlist-item {
+    height: 5rem;
+    width: 100%;
+    border-bottom: thin dotted var(--brand-light);
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1rem;
+}
+li.navlist-item a {
+  position: relative;
+  padding-right: 3.5rem;/**/
+  display: flex; 
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 2rem; 
+  letter-spacing: 0.1rem; 
+  text-transform: uppercase;
+}
+
+li.navlist-item a:any-link {
+    color: var(--brand-primary);
+}
+
+li.navlist-item a::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  height: 3rem;
+  width: 3rem;
+  background-image: var(--icon-url);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+li.navlist-item:nth-of-type(1) {
+  --icon-url: url('img/navicon2.svg');
+}
+
+li.navlist-item:nth-of-type(2) {
+  --icon-url: url('img/navicon3.svg');
+}
+
+li.navlist-item:nth-of-type(3) {
+  --icon-url: url('img/icon-subscribe.svg');
+  display: none;   
+}
+
+li.navlist-item a:hover, li.navlist-item a:active {
+    opacity: 0.8;
+}
+
+/* repeat this pattern if you have more menu items. 
+It is not necessary to name the url's with sequential numbers. */
+
+.nav-icon {
+    position: relative;
+    width: 42px;
+    height: 32px;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.nav-icon span {
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    background: var(--brand-primary);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-icon span:nth-child(1) {
+    top: 0;
+}
+
+.nav-icon span:nth-child(2) {
+    top: 13px;
+}
+
+.nav-icon span:nth-child(3) {
+    top: 26px;
+}
+
+/* When open - form X */
+/* When open - form X */
+.navbar.open .nav-icon span:nth-child(1) {
+    top: 13px;
+    transform: rotate(45deg);
+}
+
+.navbar.open .nav-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar.open .nav-icon span:nth-child(3) {
+    top: 13px;
+    transform: rotate(-45deg);
+}
+
+/* Hide menu by default on mobile */
+.navlist {
+  display: none;
+}
+
+/* Show menu when nav is open */
+.navbar.open .navlist {
+  display: flex;
+}
+
+
+/* navbar subscribe form styles */
+
+/* on mobile, display: none; */
+.subscribe {
+    display: flex;
+    align-items: stretch;
+    padding: 0.5em;
+    margin-right: 1rem;
+    border-radius: 8px;
+    background: #ffffff;
+    border: thin solid var(--brand-primary);
+    gap: 0.5rem;
+}
+
+.subscribe input {
+    flex: 1; /* Takes up remaining space */
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+}
+
+.subscribe button {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0.5rem; /* Just add some padding for clickable area */
+}
+
+.subscribe button:hover {
+    opacity: 0.8;
+}
+
+.subscribe button img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+/* media queries for navbar */
+@media (min-width: 769px) {
+
+     nav.navbar {
+        justify-content: flex-start; /* Override space-between */
+    }
+    
+    ul.navlist {
+        order: 0;
+        display: flex;
+        width: unset;
+        flex-direction: row;
+        gap: 0.8rem;
+        background-color: white;
+        padding-top: 0;
+        margin-left: auto; /* Push menu to the right */
+        margin-right: 1rem;
+
+    }
+    li.navlist-item {
+        border: none;
+        width: auto;
+        height: auto;
+        justify-content: flex-start;
+    }
+
+    li.navlist-item:nth-of-type(3) {
+        display: inline-block;
+    }
+
+    li.navlist-item a {
+        font-size: 1.2rem;
+        padding-right: 0;
+        padding-left: 1.5rem;
+    }
+    li.navlist-item a:after {
+        display: none;
+    }
+    li.navlist-item a::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 1.2rem;
+        width: 1.2rem;
+        background-image: var(--icon-url);
+        background-size: contain;
+        background-repeat: no-repeat;
+}
+
+.nav-icon {
+    display: none;
+}
+}
+</style>

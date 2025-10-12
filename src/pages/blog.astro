@@ -1,6 +1,8 @@
 ---
 import './styles/global.css';
 const pageTitle = "My Astro Learning Blog";
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <html lang="en">
@@ -12,11 +14,12 @@ const pageTitle = "My Astro Learning Blog";
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/blog/">Blog</a>
+		<Header />
   <h1>{pageTitle}</h1>
   <p>This is where I will post about my journey learning Astro.</p>	
 <p>I got a Git error when I tried to commit, and I'll try again now!</p>
-<p>I lost the Terminal window!</p></body>
+<p>I lost the Terminal window!</p>
+
+<Footer />
+</body>
 </html>
