@@ -1,0 +1,49 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import "../styles/blog-post.css";
+
+const {
+  category,
+  title,
+  date,
+  intro,
+  featuredImage,
+  featuredImageAlt,
+  postType = "post", // default to 'post' if not provided
+  goodyLinkText,
+  goodyFilename,
+  relatedPosts = [], // default to empty array
+} = Astro.props;
+---
+
+<BaseLayout pageTitle={`${title} | Friday Goody Bag`}>
+  <section class="card-container">
+    <div class={`card ${postType}`}>
+      <h3><span>{category}</span>{title}</h3>
+      <div class="card-content">
+        <p>{intro}</p>
+        <img
+          src={`/img-blog/${featuredImage}`}
+          alt={featuredImageAlt}
+          class="card-image"
+        />
+
+        <!-- The actual post content goes in the slot -->
+        <slot />
+
+        {
+          goodyLinkText && goodyFilename && (
+            <a class="download" href={`/downloads/${goodyFilename}`}>
+              <span>Grab FGB's</span> {goodyLinkText}
+            </a>
+          )
+        }
+      </div>
+    </div>
+
+    <!-- Sidebar slot for related posts, shopping, etc. -->
+    <div class="sidebars">
+      <slot name="sidebar" />
+    </div>
+  </section>
+</BaseLayout>

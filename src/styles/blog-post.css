@@ -1,0 +1,203 @@
+section.card-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    /* border: thin solid red; */
+}
+.sidebars {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+.card {
+    background-color: var(--brand-palest);
+    background-image: 
+        var(--card-icon),
+        linear-gradient(200deg, var(--brand-light) 0%, transparent 25%, transparent 40%),
+        linear-gradient(20deg, var(--brand-light) 0%, transparent 25%, transparent 40%);
+    background-size: 24px 24px, cover, cover;
+    background-position: calc(100% - 1em) 1em, top right, bottom left;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    padding: 1em;
+    border: thin solid var(--brand-pale);
+    border-radius: 8px;
+    box-shadow: -1px 2px 10px grey;
+}
+
+.sidebars li a, .sidebars li, .sidebars p {
+font-size: 1rem;
+}
+
+.sidebars .card h3 {
+    font-size: 1.2rem;
+}
+
+.sidebars .card h3 span {
+    color: #fff;
+    opacity: 0.7;
+}
+
+.sidebars ul {
+    /* list-style-type: none; */
+    padding-left: 1em;
+}
+
+.sidebars ul li::marker {
+  content: '❯\2009'; 
+  color: var(--brand-light);
+  font-size: 0.8em;
+}
+
+.sidebars a:any-link {
+    color: #fff;
+}
+
+.card.related {
+    background-color: var(--brand-primary-dark);
+    color: var(--brand-palest);
+}
+
+.card.shopping {
+    background-color: var(--brand-danger);
+    color: var(--brand-palest);
+
+}
+
+.card.hire {
+    background-color: var(--brand-primary-dark);
+    color: var(--brand-palest);
+}
+
+.card-content {
+    display: block; 
+}
+
+.card-content p {
+    font-size: 1.2rem; 
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card-content ul li {
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.card-content h2 {
+    font-size: 150%;
+}
+
+
+.card-content img {
+    float: right;
+    width: 33.33%; /* Or whatever width you want */
+    margin-left: 1rem; /* Space between text and image */
+    margin-bottom: 1rem; /* Space below image if text wraps under */
+    border-radius: 8px; 
+    border: 3px solid var(--brand-dark);
+}
+
+.card-content img.secondary {
+    float: left;
+    width: 25%;
+    margin-right: 1rem;
+    margin-left: 0;
+    margin-bottom: 1rem;
+    border: 1px solid var(--brand-dark);
+}
+
+.card-content p:first-of-type {
+    color: var(--brand-primary);
+    font-size: 130%;
+}
+ .card h3 {
+    font-size: 175%;
+ }
+
+h1.sitetitle {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+}
+
+h1.sitetitle span:first-of-type {
+    display: none;
+}
+
+.card-content .h4 {
+    color: var(--brand-primary);
+    font-weight: bold;
+}
+
+.card-content .h4:after {
+    content: ' > ';
+    color: var(--brand-danger);
+}
+
+.card-content h4 {
+    font-size: 1.2rem;
+    color: var(--brand-danger);
+}
+
+.card-content a.download {
+    background-image: url('img/navicon1_white.svg');
+
+        background-color: var(--brand-danger);
+    background-size: 24px 24px, cover;
+    /* background-position: calc(100% - 1em) 1em, center; */
+    background-position: 1em, 1em;
+    background-repeat: no-repeat;
+    padding: 1em 1em 1em 3em;
+    border: thin solid var(--brand-pale);
+    border-radius: 8px;
+    /* box-shadow: -1px 2px 10px grey; */
+    display: inline-block;
+    color: white;
+}
+
+.card-content a.download:hover, .card-content a.download:active {
+        background-color: var(--brand-primary);
+}
+
+
+/* Tablet - 2 columns */
+@media (min-width: 769px) {
+    section.card-container, .container {
+        padding-left: 0;
+        padding-right: 0;
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Desktop - 3 columns */
+@media (min-width: 1024px) {
+    section.card-container, .container {
+        width: 80%;
+        padding-left: 0;
+        padding-right: 0;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    h1.sitetitle span:first-of-type {
+    display: inline;
+}
+
+section.card-container {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+    gap: 1rem;
+}
+}

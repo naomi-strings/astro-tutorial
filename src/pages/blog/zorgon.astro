@@ -1,0 +1,97 @@
+---
+import BlogPostLayout from "../../layouts/BlogPostLayout.astro";
+
+const category = "for creatives";
+const title = "Putting your own spin on AI images";
+const date = "2025-10-10";
+const intro =
+  "Why let your A.I. have all the fun? Here's how to put your own stamp on generated images, while letting Zorgon do what he does best.";
+const featuredImage = "ai-adding-your-own-style.png";
+const featuredImageAlt = "Cartoon robot standing at an easel";
+const postType = "post";
+const goodyLinkText = "Grab FGB's Thank-you Note Prompterator (PDF, 1mb)"; // optional
+const goodyFilename = "thank-you-prompterator.pdf"; // optional
+const relatedPosts = [
+  { title: "Authenticity and LinkedIn", url: "/blog/authenticity-linkedin" },
+  { title: "An App Called Gratitude", url: "/blog/gratitude-app" },
+];
+---
+
+<BlogPostLayout
+  category={category}
+  title={title}
+  date={date}
+  intro={intro}
+  featuredImage={featuredImage}
+  featuredImageAlt={featuredImageAlt}
+  postType={postType}
+  relatedPosts={relatedPosts}
+>
+  <!-- Main post content goes here -->
+  <p>
+    Because I'm a terrible illustrator, I've always used whatever help I can get
+    to produce artwork&mdash;until November 2022, this generally meant using
+    stock images in conjunction with Photoshop and Illustrator to excerpt and
+    colorize.
+  </p>
+
+  <p>
+    As with many other creatives, AI has been a game-changer for me. But instead
+    of using it to create illustrations that are far outside of my technical
+    grasp, I use it as a helper and use it to create drawings in my own style.
+  </p>
+
+  <p>Here are a few pointers:</p>
+
+  <p>
+    <span class="h4">Prompt help</span>You can use A.I. or even a Google search
+    to help create prompts. I used ChatGPT to help create Zorgon, but first I
+    used Google to learn the phrase "rubber hose animation," a phrase I didn't
+    know before although I'd certainly seen enough of it. That's why Zorgon has
+    such great arms and legs.
+  </p>
+  <p>
+    <span class="h4">Color library</span>
+    If you have a color palette you want to use for a group of illustrations, create
+    a project and save that color palette in the instructions for the project.
+  </p>
+
+  <p>
+    <img
+      src="img-blog/17th-century-spaghetti-dinner.png"
+      class="secondary"
+    /><span class="h4">Be aware of context, historical and otherwise</span>
+    I asked ChatGPT to paint a group of 17th century Americans eating a spaghetti
+    dinner. A human artist might have asked me whether I meant colonists or Native
+    Americans. They might have questioned my choice of a menu that was unavailable
+    in 17th century America. Finally, a human artist may have asked the men to remove
+    their hats before sitting down to dinner.
+  </p>
+
+  <p>
+    <span class="h4">Count fingers and toes</span>As of this writing you still
+    ought to count fingers, toes, legs, and arms.
+  </p>
+
+  <p>
+    <span class="h4">Add your own touches in editing</span>
+    For Friday Goody Bag, I ask ChatGPT (currently using 4.0) to create images in
+    black and white. I then colorize them in Photoshop, using a limited color palette
+    to give them consistency. I also sometimes erase and redraw parts of them because
+    it makes them messier and more like my personal drawing style. Develop your own
+    "cheat code" to make the images yours, and they'll slowly shine with your personal
+    style.
+  </p>
+
+  <!-- Sidebar content goes in the named slot -->
+  <div slot="sidebar">
+    <div class="card related">
+      <div class="card-content">
+        <h3><span>related posts</span>You might also enjoy</h3>
+        <ul>
+          <li><a href="">Authenticity <span>and LinkedIn</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</BlogPostLayout>
