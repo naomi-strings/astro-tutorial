@@ -3,7 +3,7 @@
 ---
             <nav class="navbar">
                 <div class="navlogo">
-                <img src="img/fgb-logo.svg">
+                <img src="/img/fgb-logo.svg">
             </div>
             <ul class="navlist">
                 <li class="navlist-item"><a href="/blog/">blog</a></li>
@@ -24,6 +24,7 @@
             </div>
 </nav>
 <style>
+
 nav.navbar {
     background-color: var(--brand-palest);
     display: flex;
@@ -88,15 +89,15 @@ li.navlist-item a::after {
 }
 
 li.navlist-item:nth-of-type(1) {
-  --icon-url: url('img/navicon2.svg');
+  --icon-url: url('/img/navicon2.svg');
 }
 
 li.navlist-item:nth-of-type(2) {
-  --icon-url: url('img/navicon3.svg');
+  --icon-url: url('/img/navicon3.svg');
 }
 
 li.navlist-item:nth-of-type(3) {
-  --icon-url: url('img/icon-subscribe.svg');
+  --icon-url: url('/img/icon-subscribe.svg');
   display: none;   
 }
 
@@ -167,14 +168,7 @@ It is not necessary to name the url's with sequential numbers. */
 
 /* on mobile, display: none; */
 .subscribe {
-    display: flex;
-    align-items: stretch;
-    padding: 0.5em;
-    margin-right: 1rem;
-    border-radius: 8px;
-    background: #ffffff;
-    border: thin solid var(--brand-primary);
-    gap: 0.5rem;
+    display: none;
 }
 
 .subscribe input {
@@ -185,25 +179,7 @@ It is not necessary to name the url's with sequential numbers. */
     font-size: 1rem;
 }
 
-.subscribe button {
-    background: transparent;
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: 0.5rem; /* Just add some padding for clickable area */
-}
 
-.subscribe button:hover {
-    opacity: 0.8;
-}
-
-.subscribe button img {
-    width: 1.2rem;
-    height: 1.2rem;
-}
 
 /* media queries for navbar */
 @media (min-width: 769px) {
@@ -256,6 +232,39 @@ It is not necessary to name the url's with sequential numbers. */
 
 .nav-icon {
     display: none;
+}
+}
+
+@media (min-width: 1024px) {
+    .subscribe {
+        display: flex;
+        align-items: stretch;
+        padding: 0.5em;
+        margin-right: 1rem;
+        border-radius: 8px;
+        background: #ffffff;
+        border: thin solid var(--brand-primary);
+        gap: 0.5rem;
+    }
+
+    .subscribe button {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0.5rem; /* Just add some padding for clickable area */
+}
+
+.subscribe button:hover {
+    opacity: 0.8;
+}
+
+.subscribe button img {
+    width: 1.2rem;
+    height: 1.2rem;
 }
 }
 </style>

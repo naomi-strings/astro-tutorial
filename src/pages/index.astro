@@ -1,32 +1,65 @@
 ---
-const pageTitle = "Friday Goody Bag";
-import './styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HomepageArticleBox from "../components/HomepageArticleBox.astro";
+
+const pageTitle = "Three tips each week to help you in easy ways";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
+<BaseLayout pageTitle={pageTitle}>
+  <section class="card-container">
+    <div class="box-about">
+      <h3><span>From the founder</span>About Friday Goody Bag</h3>
+      <div class="card-content">
+        <p>
+          Friday Goody Bag will help you level up your creativity, impact, and
+          fun.<br /><br />
 
-		<Header />
+          Each week, we share three tips to help you get the small stuff right
+          so you don't have to spend as much time fixing your life.<br /><br
+          />Want <span style="font-weight: bold; color: var(--brand-light);"
+            >FGB</span
+          > in your inbox?<button>I Want Goodies</button>
+        </p>
+        <img
+          src="/img/founder-image.png"
+          alt="Naomi Stringfield avatar"
+          class="card-image"
+        />
+      </div><!--card-content-->
+    </div><!--card box-about -->
+    <HomepageArticleBox
+      category="New"
+      post_title="Putting your own spin on AI images"
+      post_type="post"
+      extraClass="pinned"
+      post_description="Why let your A.I. have all the fun? Here's how to put your own stamp on generated images, while letting Zorgon do what he does best."
+      image_filename="ai-adding-your-own-style.png"
+      image_alt="Cartoon robot standing at an easel"
+      link_text="Learn this"
+      link_url="/blog/zorgon"
+    />
 
+    <HomepageArticleBox
+      category="LinkedIn tips"
+      post_title="Your professional headline"
+      post_type="post"
+      post_description="The few words that appear in gray underneath your name are part of the first impression you make on LinkedIn. Here's what that headline may be saying about you -- and how to fix it."
+      image_filename="linkedin-headline.png"
+      image_alt="LinkedIn headline"
+      link_text="Learn more"
+      link_url="/blog/linkedin"
+    />
 
-
-		<h1>{pageTitle}</h1>
-		<Footer />
-		<script>
-			        navIcon.addEventListener('click', function () {
-            console.log('Clicked!');
-            document.querySelector('.navbar').classList.toggle('open');
-            console.log('Navbar classes:', document.querySelector('.navbar').classList);
-        });
-  </script>
-	</body>
-</html>
+    <HomepageArticleBox
+      category="Classic"
+      post_title="Authentic thank you notes, no AI required"
+      post_type="post"
+      post_description="A handwritten thank-you note means the world — but who has time? Friday Goody Bag comes to the rescue with a Prompterator kit that will help you write sincere thank-you notes quickly, with no AI slop."
+      image_filename="thank-you-note.png"
+      image_alt="thank-you note"
+      link_text="Grab the kit"
+      link_url="/blog/thankyou"
+    />
+    <!-- Add more article boxes here -->
+  </section>
+</BaseLayout>

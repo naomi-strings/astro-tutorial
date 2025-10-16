@@ -1,0 +1,108 @@
+---
+const {
+  category,
+  post_title,
+  post_type,
+  post_description,
+  image_filename,
+  image_alt,
+  link_text,
+  link_url,
+  extraClass = "",
+} = Astro.props;
+---
+
+<div class={`card ${post_type} ${extraClass}`}>
+  <h3><span>{category}</span>{post_title}</h3>
+  <div class="card-content">
+    <p>
+      {post_description}
+      <a href={link_url} class="post-link">{link_text}</a>
+    </p>
+    <img
+      src={`/img-blog/${image_filename}`}
+      alt={image_alt}
+      class="card-image"
+    />
+  </div><!--card-content-->
+</div><!--card post -->
+
+<style>
+  .card {
+    background-image: var(--card-icon),
+      linear-gradient(to top right, var(--brand-light), var(--brand-pale));
+    background-size:
+      24px 24px,
+      cover;
+    background-position:
+      calc(100% - 1em) 1em,
+      center;
+    background-repeat: no-repeat, no-repeat;
+    padding: 1em;
+    border: thin solid var(--brand-pale);
+    border-radius: 8px;
+    box-shadow: -1px 2px 10px grey;
+  }
+
+  .card h3 {
+    width: calc(100% - 2em - 24px);
+    text-wrap: balance;
+  }
+
+  .card h3 span {
+    color: var(--brand-primary);
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+  }
+
+  .card a:any-link {
+    color: var(--brand-primary);
+    font-weight: bold;
+    display: block;
+    text-decoration: none;
+    padding-top: 8px;
+  }
+
+  .card a:any-link span {
+    font-weight: normal;
+  }
+
+  .card a:any-link:hover,
+  .card a:any-link:active {
+    opacity: 0.7;
+  }
+
+  .card a:any-link:after {
+    content: "\2192";
+  }
+
+  .card.post {
+    --card-icon: url("/img/navicon2.svg");
+  }
+
+  .card.goody {
+    --card-icon: url("/img/navicon1.svg");
+  }
+
+  .card-content {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .card-content p {
+    flex: 2 1 0;
+    margin: 0;
+    min-width: 0;
+  }
+
+  .card-image {
+    flex: 1 1 0;
+    object-fit: cover;
+    border-radius: 8px;
+    max-height: 300px;
+    border: 3px solid var(--brand-dark);
+    min-width: 0;
+  }
+</style>
